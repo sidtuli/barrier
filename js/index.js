@@ -45,7 +45,13 @@ jQuery(document).ready(function () {
               $("#vmap").height(h)
           }
         });
-        
+        // Making the bandwidth buttons appear and the map to disappear
+        var country
+        $("#label").click(function(){
+            country = $("#label").text();
+            $("#world").fadeOut();
+            $("#bandwidths").fadeIn();
+        });
         
           
       });
