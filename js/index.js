@@ -23,7 +23,7 @@ jQuery(document).ready(function () {
           backgroundColor: '#5577FF',
           color: '#ffffff',
           hoverOpacity: 0.7,
-          selectedColor: '#F000F0',
+          selectedColor: '#702963',
           enableZoom: true,
           showTooltip: true,
           scaleColors: ['#FF0000', '#FFFF00'],
