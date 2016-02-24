@@ -12,20 +12,44 @@
     <script type="text/javascript" src="dist/maps/jquery.vmap.world.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/randata.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    
-    
-    <script>
-      
-    </script>
+    <style>
+        body {background-color:#5577FF}
+        #bandwidths{
+            display:none;
+            text-align:center;
+            margin-right:auto;
+            margin-left:auto;
+        }
+        #world{
+        }
+        a{
+            text-align:center;
+            margin-right:auto;
+            margin-left:auto;
+        }
+        button{
+            text-align:center;
+            margin-right:auto;
+            margin-left:auto;
+        }
+        #regionbutton {
+            text-align:center;
+            margin-right:auto;
+            margin-left:auto;
+        }
+        #label{
+            display:none;
+        }
+    </style>
   </head>
   <body>
     <div id="world">
         <div id="vmap" style="width: 600px; height: 400px;margin: 0 auto;" ></div>
-        <div style="text-align:center;margin-left: auto; margin-right: auto">
-          <button id="label" style="display:none" ></button>
+        <div id="regionbutton">
+          <button id="label"></button>
         </div>
-      </div>
-      <div id="bandwidths" style="display:none;text-align:center;margin-right:auto;margin-left:auto;">
+    </div>
+    <div id="bandwidths">
         <a href="https://www.youtube.com/embed/k4Za7NP9y9I?autoplay=1"><button>0 Mbps</button></a>
         <a href="https://www.youtube.com/embed/k4Za7NP9y9I?autoplay=1"><button>1-10 Mbps</button></a>
         <a href="https://www.youtube.com/embed/k4Za7NP9y9I?autoplay=1"><button>10-25 Mbps</button></a>
@@ -33,7 +57,6 @@
         <a href="https://www.youtube.com/embed/THmhmYNy8ls?autoplay=1"><button>50-100 Mbps</button></a>
         <a href="https://www.youtube.com/embed/THmhmYNy8ls?autoplay=1"><button>100-1 Gbps</button></a>
         <a href="https://www.youtube.com/embed/THmhmYNy8ls?autoplay=1"><button> Greater Than 1 Gbps</button></a>
-        
-      </div>
+    </div>
   </body>
 </html>

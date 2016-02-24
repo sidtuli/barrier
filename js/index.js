@@ -23,7 +23,7 @@ jQuery(document).ready(function () {
           backgroundColor: '#5577FF',
           color: '#ffffff',
           hoverOpacity: 0.7,
-          selectedColor: '#0000ff',
+          selectedColor: '#F000F0',
           enableZoom: true,
           showTooltip: true,
           scaleColors: ['#FF0000', '#FFFF00'],
@@ -33,7 +33,7 @@ jQuery(document).ready(function () {
           onRegionClick: function(event, code, region) {
               console.log(code,region)
               $("#label").text(region)
-              $("#label").show()
+              $("#label").show();
           },
           // When the window is resized I again find the window width and length and proportion the map to fit well
           onResize: function(event, width, height) {
