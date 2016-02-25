@@ -14,7 +14,7 @@ jQuery(document).ready(function () {
             pi = data
             // Printing out all the countries in JSON
             for(i = 0; i < data.length; i++) {
-                console.log(data[i].FIELD3)
+                console.log(data[i].country)
             }
         });
         // Here is all the code that deals with the vector map functionality 
