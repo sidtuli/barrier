@@ -1080,7 +1080,7 @@
   {
     "Rank":"49",
     "FIELD2":"USA",
-    "Country":"United States",
+    "Country":"United States of America",
     "CurrScore":"24.41",
     "FIELD5":"-0.92",
     "FIELD6":"-3 (46 ; 23.49)",
@@ -1322,7 +1322,7 @@
   {
     "Rank":"60",
     "FIELD2":"KOR",
-    "Country":"Republic of Korea",
+    "Country":"South Korea",
     "CurrScore":"26.55",
     "FIELD5":"-0.89",
     "FIELD6":"-3 (57 ; 25.66)",
@@ -1894,7 +1894,7 @@
   {
     "Rank":"86",
     "FIELD2":"CIV",
-    "Country":"C�te d'Ivoire",
+    "Country":"Cote d'Ivoire",
     "CurrScore":"30.45",
     "FIELD5":"1.18",
     "FIELD6":"+15 (101 ; 31.63)",
@@ -2356,7 +2356,7 @@
   {
     "Rank":"107",
     "FIELD2":"COG",
-    "Country":"Republic of the Congo",
+    "Country":"Republic Of The Congo",
     "CurrScore":"33",
     "FIELD5":"-3.56",
     "FIELD6":"-25 (82 ; 29.44)",
@@ -2422,7 +2422,7 @@
   {
     "Rank":"110",
     "FIELD2":"CAF",
-    "Country":"Central African",
+    "Country":"Central African Republic",
     "CurrScore":"33.84",
     "FIELD5":"-0.71",
     "FIELD6":"-1 (109 ; 33.13)",
@@ -3808,7 +3808,7 @@
   {
     "Rank":"173",
     "FIELD2":"IRN",
-    "Country":"Islamic Republic of Iran",
+    "Country":"Iran",
     "CurrScore":"72.32",
     "FIELD5":"-0.03",
     "FIELD6":"0 (173 ; 72.29)",
@@ -3940,7 +3940,7 @@
   {
     "Rank":"179",
     "FIELD2":"PRK",
-    "Country":"Democratic People's Republic of Korea",
+    "Country":"North Korea",
     "CurrScore":"83.25",
     "FIELD5":"-1.29",
     "FIELD6":"0 (179 ; 81.96)",

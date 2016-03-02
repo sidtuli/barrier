@@ -2,7 +2,7 @@ var recodes = ["af","al","dz","ao","ag","ar","am","au","at","az","bs","bh","bd",
 var sampledata = {};
 
 for (i = 0; i < recodes.length; i++) {
-    randRank = 1000000 * Math.random();
+    randRank = 1000000000 * Math.random();
     country = recodes[i];
     sampledata[country] = randRank;
 }

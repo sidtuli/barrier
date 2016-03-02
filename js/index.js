@@ -10,11 +10,18 @@ jQuery(document).ready(function () {
         // Create an array to hold the data from the World Press Freedom Index JSON
         var pi =[]
         // Then I retrieve info from the JSon
-        $.getJSON("data/wpfi.json",function(data){
+        $.getJSON("js/data/wpfi.json",function(data){
             pi = data
-            // Printing out all the countries in JSON
+        });
+        $.getJSON("js/data/regions.json", function(data){
             for(i = 0; i < data.length; i++) {
-                console.log(data[i].Country)
+                flag = true;
+                for(j = 0; j < pi.length; j++){
+                    if(data[i].Country == pi[j].Country){
+                        flag = false;
+                    }
+                }
+                if(flag){console.log(data[i].Country)}
             }
         });
         // Here is all the code that deals with the vector map functionality 
