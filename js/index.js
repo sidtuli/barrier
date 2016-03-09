@@ -66,9 +66,18 @@ jQuery(document).ready(function () {
           }
         });
         // Making the bandwidth buttons appear and the map to disappear
-        var country
+        var country, censor
+        function findCensorship(country){
+            for(i = 0; i < pi.length; i++) {
+                if(pi[i].Country == country) {
+                    return pi[i].Section
+                }
+            }
+        }
         $("#label").click(function(){
             country = $("#label").text();
+            censor = findCensorship(country);
+            console.log(censor)
             $("#world").fadeOut();
             $("#bandwidths").fadeIn();
         });
