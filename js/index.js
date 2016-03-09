@@ -13,7 +13,12 @@ jQuery(document).ready(function () {
         $.getJSON("js/data/wpfi.json",function(data){
             pi = data
         });
+        
+        // Retrieving data from the json of regions from my map.
+        // Then I am comparing it to the World Press Index data.
+        var regions = []
         $.getJSON("js/data/regions.json", function(data){
+            regions = data
             for(i = 0; i < data.length; i++) {
                 flag = true;
                 for(j = 0; j < pi.length; j++){
@@ -24,10 +29,12 @@ jQuery(document).ready(function () {
                 if(flag){console.log(data[i].Country)}
             }
         });
+        var regionCode
         // Here is all the code that deals with the vector map functionality 
         jQuery('#vmap').vectorMap({
           map: 'world_en',
           backgroundColor: '#5577FF',
+          borderColor: '#000000',
           color: '#ffffff',
           hoverOpacity: 0.7,
           selectedColor: '#702963',
@@ -38,7 +45,13 @@ jQuery(document).ready(function () {
           normalizeFunction: 'polynomial',
           // When a region is clicked, it make a button appear    
           onRegionClick: function(event, code, region) {
-              console.log(code,region)
+              regionCode = code;
+              //console.log(regionCode.toUpperCase);
+              for(i = 0; i < regions.length; i++){
+                  if(regionCode.toUpperCase() == regions[i].Code){
+                      console.log(regionCode,regions[i].Country)
+                  }
+              }
               $("#label").text(region)
               $("#label").show();
           },
@@ -59,6 +72,4 @@ jQuery(document).ready(function () {
             $("#world").fadeOut();
             $("#bandwidths").fadeIn();
         });
-        
-          
       });
