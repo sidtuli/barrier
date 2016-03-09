@@ -80,5 +80,11 @@ jQuery(document).ready(function () {
             console.log(censor)
             $("#world").fadeOut();
             $("#bandwidths").fadeIn();
+            $("#back").fadeIn();
         });
+        $("#back").click(function(){
+            $("#back").fadeOut();
+            $("#bandwidths").fadeOut();
+            $("#world").fadeIn();
+        })
       });
