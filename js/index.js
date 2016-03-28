@@ -3,8 +3,8 @@ jQuery(document).ready(function () {
         // Then change the numbers to not fill the window and then change its dimensions
         w = ($(window).width())* .9
         h = ($(window).height())* .9
-        console.log(w)
-        console.log(h)
+        //console.log(w)
+        //console.log(h)
         $("#vmap").width(w)
         $("#vmap").height(h)
         // Create an array to hold the data from the World Press Freedom Index JSON
@@ -19,15 +19,6 @@ jQuery(document).ready(function () {
         var regions = []
         $.getJSON("js/data/regions.json", function(data){
             regions = data
-            for(i = 0; i < data.length; i++) {
-                flag = true;
-                for(j = 0; j < pi.length; j++){
-                    if(data[i].Country == pi[j].Country){
-                        flag = false;
-                    }
-                }
-                if(flag){console.log(data[i].Country)}
-            }
         });
         var regionCode
         // Here is all the code that deals with the vector map functionality 
@@ -37,28 +28,42 @@ jQuery(document).ready(function () {
           borderColor: '#000000',
           color: '#ffffff',
           hoverOpacity: 0.7,
-          selectedColor: '#702963',
+          selectedColor: '#138808',
           enableZoom: true,
           showTooltip: true,
           scaleColors: ['#FF0000', '#FFFF00'],
           values: sampledata,
           normalizeFunction: 'polynomial',
-          // When a region is clicked, it make a button appear    
-          onRegionClick: function(event, code, region) {
-              regionCode = code;
-              //console.log(regionCode.toUpperCase);
-              for(i = 0; i < regions.length; i++){
-                  if(regionCode.toUpperCase() == regions[i].Code){
-                      console.log(regionCode,regions[i].Country)
-                  }
+          // When a region is clicked, it make a button appear
+          onRegionOver: function(event, code, region) {
+              if(isSelect(code)) {
+                  document.body.style.cursor = "pointer";
+              } else {
+                  //console.log(code);
+                  event.preventDefault();
               }
+          },
+          onRegionClick: function(event, code, region) {
+              //console.log(selectable);
+              //console.log(code);
+              if(isSelect(code)){
+                  //console.log("hello"+code);
+                  for(i = 0; i < regions.length; i++){
+                  if(code.toUpperCase() == regions[i].Code){
+                      //console.log(code,regions[i].Country)
+                    }
+                  }
               $("#label").text(region)
               $("#label").show();
+              } else {
+                  event.preventDefault();
+              }
+              
           },
           // When the window is resized I again find the window width and length and proportion the map to fit well
           onResize: function(event, width, height) {
-              console.log(width)
-              console.log(height)
+              //console.log(width)
+              //console.log(height)
               w = ($(window).width()) * .9
               h = ($(window).height()) * .9
               $("#vmap").width(w)
@@ -73,6 +78,14 @@ jQuery(document).ready(function () {
                     return pi[i].Section
                 }
             }
+        }
+        function isSelect(regCode) {
+            for(i = 0; i < selectable.length; i++) {
+                if(regCode == selectable[i]) {
+                    return true;
+                }
+            }
+            return false;
         }
         $("#label").click(function(){
             country = $("#label").text();
