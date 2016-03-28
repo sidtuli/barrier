@@ -10,6 +10,7 @@
     <script type="text/javascript" src="js/jquery-1.12.0.js"></script>
     <script type="text/javascript" src="dist/jquery.vmap.js"></script>
     <script type="text/javascript" src="dist/maps/jquery.vmap.world.js" charset="utf-8"></script>
+      <script type="text/javascript" src="dist/maps/jquery.vmap.usa.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/newdata.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <style>
@@ -21,6 +22,12 @@
             margin-left:auto;
         }
         #world{
+        }
+        #usa{
+            display:none;
+            width: 600px;
+            height:400px;
+            margin: 0 auto;
         }
         a{
             text-align:center;
@@ -61,6 +68,10 @@
         <div id="regionbutton">
           <button id="label"></button>
         </div>
+    </div>
+      
+    <div id="usa">
+        <div id="umap"></div>
     </div>
     <div id="bandwidths">
         <div>

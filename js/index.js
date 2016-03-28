@@ -7,6 +7,8 @@ jQuery(document).ready(function () {
         //console.log(h)
         $("#vmap").width(w)
         $("#vmap").height(h)
+        $("#umap").width(w*(.5/.9))
+        $("#umap").height(h*(.5/.9))
         // Create an array to hold the data from the World Press Freedom Index JSON
         var pi =[]
         // Then I retrieve info from the JSon
@@ -92,12 +94,39 @@ jQuery(document).ready(function () {
             censor = findCensorship(country);
             console.log(censor)
             $("#world").fadeOut();
+            if(country == "United States of America") {
+                $("#usa").fadeIn();
+            }
             $("#bandwidths").fadeIn();
             $("#back").fadeIn();
         });
         $("#back").click(function(){
             $("#back").fadeOut();
             $("#bandwidths").fadeOut();
+            $("#usa").fadeOut();
             $("#world").fadeIn();
-        })
-      });
+        });
+        jQuery('#umap').vectorMap({
+          map: 'usa_en',
+          backgroundColor: '#5577FF',
+          borderColor: '#000000',
+          color: '#ffffff',
+          hoverOpacity: 0.7,
+          selectedColor: '#138808',
+          enableZoom: true,
+          showTooltip: true,
+          scaleColors: ['#FF0000', '#FFFF00'],
+          values:statelist,
+          onRegionClick: function(event, code, region){
+            event.preventDefault();
+          },
+          onResize: function(event, width, height) {
+              //console.log(width)
+              //console.log(height)
+              w = ($(window).width()) * .5
+              h = ($(window).height()) * .5
+              $("#umap").width(w)
+              $("#umap").height(h)
+          }
+        });
+    });
