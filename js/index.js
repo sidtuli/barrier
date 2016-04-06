@@ -7,17 +7,7 @@ jQuery(document).ready(function () {
         //console.log(h)
         $("#vmap").width(w)
         $("#vmap").height(h)
-        $("#umap").width(w*(.5/.9))
-        $("#umap").height(h*(.5/.9))
-        // Create an array to hold the data from the World Press Freedom Index JSON
-        var pi =[]
-        // Then I retrieve info from the JSon
-        $.getJSON("js/data/wpfi.json",function(data){
-            pi = data
-        });
-        
         // Retrieving data from the json of regions from my map.
-        // Then I am comparing it to the World Press Index data.
         var regions = []
         $.getJSON("js/data/regions.json", function(data){
             regions = data
@@ -50,22 +40,24 @@ jQuery(document).ready(function () {
               //console.log(code);
               if(isSelect(code)){
                   //console.log("hello"+code);
-                  for(i = 0; i < regions.length; i++){
+                  /*for(i = 0; i < regions.length; i++){
                   if(code.toUpperCase() == regions[i].Code){
                       //console.log(code,regions[i].Country)
                     }
-                  }
-              var button = region;
-              if(region === "United States of America") {
-                  button = "Chattanooga";
-                  $("#navajo").show();
+                  }*/
+                var button = region;
+                if(region === "United States of America") {
+                    button = "Chattanooga";
+                    $("#navajo").show();
+                } else {
+                    $("#navajo").hide();
+                }
+                $("#label").text(button)
+                $("#label").show();
               } else {
-                  $("#navajo").hide();
-              }
-              $("#label").text(button)
-              $("#label").show();
-              } else {
-                  event.preventDefault();
+                $("#label").hide();
+                $("#navajo").hide();
+                event.preventDefault();
               }
               
           },
@@ -79,15 +71,6 @@ jQuery(document).ready(function () {
               $("#vmap").height(h)
           }
         });
-        // Making the bandwidth buttons appear and the map to disappear
-        var country, censor
-        function findCensorship(country){
-            for(i = 0; i < pi.length; i++) {
-                if(pi[i].Country == country) {
-                    return pi[i].Section
-                }
-            }
-        }
         function isSelect(regCode) {
             for(i = 0; i < selectable.length; i++) {
                 if(regCode == selectable[i]) {
@@ -96,44 +79,4 @@ jQuery(document).ready(function () {
             }
             return false;
         }
-        $("#label").click(function(){
-            //country = $("#label").text();
-            //censor = findCensorship(country);
-            //console.log(censor)
-            //$("#world").fadeOut();
-            //if(country == "United States of America") {
-                //$("#usa").fadeIn();
-            //}
-            //$("#bandwidths").fadeIn();
-            //$("#back").fadeIn();
-        });
-        $("#back").click(function(){
-            $("#back").fadeOut();
-            //$("#bandwidths").fadeOut();
-            $("#usa").fadeOut();
-            $("#world").fadeIn();
-        });
-        jQuery('#umap').vectorMap({
-          map: 'usa_en',
-          backgroundColor: '#5577FF',
-          borderColor: '#000000',
-          color: '#ffffff',
-          hoverOpacity: 0.7,
-          selectedColor: '#138808',
-          enableZoom: true,
-          showTooltip: true,
-          scaleColors: ['#FF0000', '#FFFF00'],
-          values:statelist,
-          onRegionClick: function(event, code, region){
-            event.preventDefault();
-          },
-          onResize: function(event, width, height) {
-              //console.log(width)
-              //console.log(height)
-              w = ($(window).width()) * .5
-              h = ($(window).height()) * .5
-              $("#umap").width(w)
-              $("#umap").height(h)
-          }
-        });
     });
