@@ -55,7 +55,14 @@ jQuery(document).ready(function () {
                       //console.log(code,regions[i].Country)
                     }
                   }
-              $("#label").text(region)
+              var button = region;
+              if(region === "United States of America") {
+                  button = "Chattanooga";
+                  $("#navajo").show();
+              } else {
+                  $("#navajo").hide();
+              }
+              $("#label").text(button)
               $("#label").show();
               } else {
                   event.preventDefault();
@@ -90,19 +97,19 @@ jQuery(document).ready(function () {
             return false;
         }
         $("#label").click(function(){
-            country = $("#label").text();
-            censor = findCensorship(country);
-            console.log(censor)
-            $("#world").fadeOut();
-            if(country == "United States of America") {
-                $("#usa").fadeIn();
-            }
-            $("#bandwidths").fadeIn();
-            $("#back").fadeIn();
+            //country = $("#label").text();
+            //censor = findCensorship(country);
+            //console.log(censor)
+            //$("#world").fadeOut();
+            //if(country == "United States of America") {
+                //$("#usa").fadeIn();
+            //}
+            //$("#bandwidths").fadeIn();
+            //$("#back").fadeIn();
         });
         $("#back").click(function(){
             $("#back").fadeOut();
-            $("#bandwidths").fadeOut();
+            //$("#bandwidths").fadeOut();
             $("#usa").fadeOut();
             $("#world").fadeIn();
         });
