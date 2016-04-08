@@ -38,6 +38,7 @@ jQuery(document).ready(function () {
           onRegionClick: function(event, code, region) {
               //console.log(selectable);
               //console.log(code);
+              
               if(isSelect(code)){
                   //console.log("hello"+code);
                   /*for(i = 0; i < regions.length; i++){
@@ -54,6 +55,8 @@ jQuery(document).ready(function () {
                 }
                 $("#label").text(button)
                 $("#label").show();
+                $("#country").prop("href",findLink(region));
+                console.log($("#country").attr("href"))
               } else {
                 $("#label").hide();
                 $("#navajo").hide();
@@ -79,4 +82,29 @@ jQuery(document).ready(function () {
             }
             return false;
         }
+        function findLink(country) {
+            console.log(country)
+            if(country == "Finland"){
+                return "https://www.youtube.com/embed/3ZpKBwKSy5o?autoplay=1"
+            }
+            if(country == "China"){
+                return "https://www.youtube.com/embed/xkAkC7fLNMA?autoplay=1"
+            }
+            if(country == "New Zealand"){
+                return "https://www.youtube.com/embed/tqlx7bfUq1w?autoplay=1"
+            }
+            if(country == "Japan"){
+                return "https://www.youtube.com/embed/FdJztBo6k-k?autoplay=1"
+            }
+            if(country == "United States of America"){
+                return "https://www.youtube.com/embed/Imqr63TU_pI?autoplay=1"
+            }
+            if(country == "South Africa"){
+                return "https://www.youtube.com/embed/26-9OF3B55Q?autoplay=1"
+            }
+            if(country == "Paraguay"){
+                return "https://www.youtube.com/embed/CI9z-RHXE1c?autoplay=1"
+            }
+            else{return "Error"}
+          }
     });
