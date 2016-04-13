@@ -85,25 +85,25 @@ jQuery(document).ready(function () {
         function findLink(country) {
             console.log(country)
             if(country == "Finland"){
-                return "https://www.youtube.com/embed/3ZpKBwKSy5o?autoplay=1"
+                return "finland.html"
             }
             if(country == "China"){
-                return "https://www.youtube.com/embed/xkAkC7fLNMA?autoplay=1"
+                return "china.html"
             }
             if(country == "New Zealand"){
-                return "https://www.youtube.com/embed/tqlx7bfUq1w?autoplay=1"
+                return "newzealand.html"
             }
             if(country == "Japan"){
-                return "https://www.youtube.com/embed/FdJztBo6k-k?autoplay=1"
+                return "japan.html"
             }
             if(country == "United States of America"){
-                return "https://www.youtube.com/embed/Imqr63TU_pI?autoplay=1"
+                return "chattanooga.html"
             }
             if(country == "South Africa"){
-                return "https://www.youtube.com/embed/26-9OF3B55Q?autoplay=1"
+                return "southafrica.html"
             }
             if(country == "Paraguay"){
-                return "https://www.youtube.com/embed/CI9z-RHXE1c?autoplay=1"
+                return "paraguay.html"
             }
             else{return "Error"}
           }
