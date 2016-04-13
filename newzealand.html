@@ -8,28 +8,69 @@
     <script src="js/video.js"></script>
     <script>
       // ensure the web page (DOM) has loaded
-     jQuery(document).ready(function () {
+        jQuery(document).ready(function () {
             var pop = Popcorn("#ourvideo");
-         // add a footnote at 2 seconds, and remove it at 6 seconds
-         pop.footnote({
-           start: 2,
-           end: 6,
-           text: "Pop!",
-           target: "footnotediv"
-         });
+            // add a footnote at 2 seconds, and remove it at 6 seconds
+            pop.footnote({
+                start: 0,
+                end: 5,
+                text: "World",
+                target: "press"
+            });
+            pop.footnote({
+                start: 5,
+                end: 10,
+                text: "World Press",
+                target: "press"
+            });
+            pop.footnote({
+                start: 10,
+                end: 15,
+                text: "World Press Freedom",
+                target: "press"
+            });
+            pop.footnote({
+                start: 15,
+                end: 20,
+                text: "World Press Freedom Index:",
+                target: "press"
+            });
+            pop.footnote({
+                start: 15,
+                end: 20,
+                text: "World Press Freedom Index: 6",
+                target: "press"
+            });
+            
+            pop.footnote({
+                start: 0,
+                end: 5,
+                text: "Average",
+                target: "bandwidth"
+            });
+            pop.footnote({
+                start: 5,
+                end: 10,
+                text: "Average National",
+                target: "bandwidth"
+            });
+            pop.footnote({
+                start: 10,
+                end: 15,
+                text: "Average National Bandwidth:",
+                target: "bandwidth"
+            });
+            pop.footnote({
+                start: 15,
+                end: 20,
+                text: "Average National Bandwidth: 15 Mb/s",
+                target: "bandwidth"
+            });
          // play the video right away
-         pop.play();
+            pop.play();
         });
     </script>
-    <style>
-        #vid{
-            margin-left 40%;
-            margin-right:40%;
-        }
-        #ourvideo{
-            margin:0 auto;
-        }
-    </style>
+    
   </head>
   <body>
     <div id = "vid">
@@ -39,6 +80,7 @@
           <source src="NewZealand.webm">
         </video>
     </div>
-    <div id="footnotediv"></div>
+    <div id="press"></div>
+    <div id="bandwidth"></div>
   </body>
 </html>

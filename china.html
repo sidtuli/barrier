@@ -10,25 +10,71 @@
       // ensure the web page (DOM) has loaded
       jQuery(document).ready(function () {
         var pop = Popcorn("#ourvideo");
-         pop.footnote({
-           start: 2,
-           end: 6,
-           text: "Pop!",
-           target: "footnotediv"
+        pop.footnote({
+            start: 20,
+            end: 30,
+            text: "World",
+            target: "press"
+        });
+        pop.footnote({
+            start: 30,
+            end: 40,
+            text: "World Press",
+            target: "press"
+        });
+        pop.footnote({
+            start: 40,
+            end: 50,
+            text: "World Press Freedom",
+            target: "press"
+        });
+        pop.footnote({
+            start: 50,
+            end: 60,
+            text: "World Press Freedom Index",
+            target: "press"
+        });
+        pop.footnote({
+            start: 60,
+            end: 70,
+            text: "World Press Freedom Index Rank:",
+            target: "press"
+        });
+        pop.footnote({
+            start: 70,
+            end: 80,
+            text: "World Press Freedom Index Rank: 176",
+            target: "press"
+        });
+        
+        pop.footnote({
+           start: 20,
+           end: 30,
+           text: "Average",
+           target: "bandwidth"
+         });
+        pop.footnote({
+           start: 30,
+           end: 40,
+           text: "Average National",
+           target: "bandwidth"
+         });
+        pop.footnote({
+           start: 40,
+           end: 50,
+           text: "Average National Bandwidth:",
+           target: "bandwidth"
+         });
+        pop.footnote({
+           start: 60,
+           end: 70,
+           text: "Average National Bandwidth: 3.7 Mb/s",
+           target: "bandwidth"
          });
          // play the video right away
          pop.play();
         });
     </script>
-    <style>
-        #vid{
-            margin-left 40%;
-            margin-right:40%;
-        }
-        #ourvideo{
-            margin:0 auto;
-        }
-    </style>
   </head>
   <body>
     <div id = "vid">
@@ -38,6 +84,7 @@
           <source src="China.webm">
         </video>
     </div>
-    <div id="footnotediv"></div>
+    <div id="press"></div>
+    <div id="bandwidth"></div>
   </body>
 </html>

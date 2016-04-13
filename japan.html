@@ -11,25 +11,22 @@
       jQuery(document).ready(function () {
             var pop = Popcorn("#ourvideo");
          // add a footnote at 2 seconds, and remove it at 6 seconds
-         pop.footnote({
-           start: 2,
-           end: 6,
-           text: "Pop!",
-           target: "footnotediv"
+        pop.footnote({
+            start: 10,
+            end: 62,
+            text: "World Press Freedom Index Rank: 61",
+            target: "press"
+        });
+        pop.footnote({
+           start: 10,
+           end: 62,
+           text: "Average National Bandwidth: 15 Mb/s",
+           target: "bandwidth"
          });
          // play the video right away
          pop.play();
         });
     </script>
-    <style>
-        #vid{
-            margin-left 40%;
-            margin-right:40%;
-        }
-        #ourvideo{
-            margin:0 auto;
-        }
-    </style>
   </head>
   <body>
     <div id = "vid">
@@ -39,6 +36,7 @@
           <source src="Japan.webm">
         </video>
     </div>
-    <div id="footnotediv"></div>
+    <div id="press"></div>
+    <div id="bandwidth"></div>
   </body>
 </html>
