@@ -25,6 +25,9 @@
              $("#ourvideo").height(vH);
              $("#ourvideo").width(vW);
              sidemargin = ($(document).width - vW)/2;
+             backMargin = ($(document).width - $("#back").width)/2;
+             $("#back").css({'margin-left':backMargin+'px'});
+             $("#back").css({'margin-right':backMargin+'px'});
              $("#ourvideo").css({'margin-left':sidemargin+'px'});
              $("#ourvideo").css({'margin-right':sidemargin+'px'});
              $("#ourvideo").css({'margin-top':'1%'});
