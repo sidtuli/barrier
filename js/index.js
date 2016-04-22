@@ -1,8 +1,8 @@
 jQuery(document).ready(function () {
         // Initially grab the width and length of the browser window
         // Then change the numbers to not fill the window and then change its dimensions
-        w = ($(window).width())* .9
-        h = ($(window).height())* .9
+        w = ($(document).width())* .9
+        h = ($(document).height())* .9
         //console.log(w)
         //console.log(h)
         $("#vmap").width(w)
@@ -49,27 +49,46 @@ jQuery(document).ready(function () {
                 var button = region;
                 if(region === "United States of America") {
                     button = "Chattanooga";
-                    $("#navajo").show();
+                    if($("#navajo").is(":hidden")){
+                        $("#navajo").toggle("highlight");
+                    }
                 } else {
-                    $("#navajo").hide();
+                    if($("#navajo").is(":visible")) {
+                        $("#navajo").toggle("highlight");
+                    }
                 }
-                $("#label").text(button)
-                $("#label").show();
+                $("#label").text(button);
+                if($("#label").is(":hidden")){
+                    console.log(region);
+                    $("#label").toggle("highlight");
+                }
                 $("#country").prop("href",findLink(region));
                 console.log($("#country").attr("href"))
               } else {
-                $("#label").hide();
-                $("#navajo").hide();
+                if($("#label").is(":visible") && $("#navajo").is(":visible")) {
+                  $("#label").toggle("highlight");
+                  $("#navajo").toggle("highlight");
+                } else if($("#label").is(":visible")) {
+                  $("#label").toggle("highlight");
+                }
                 event.preventDefault();
               }
               
+          },
+          onRegionDeselect: function(event, code, region) {
+              if($("#label").is(":visible") && $("#navajo").is(":visible")) {
+                  $("#label").toggle("highlight");
+                  $("#navajo").toggle("highlight");
+              } else if($("#label").is(":visible")) {
+                  $("#label").toggle("highlight");
+              } 
           },
           // When the window is resized I again find the window width and length and proportion the map to fit well
           onResize: function(event, width, height) {
               //console.log(width)
               //console.log(height)
-              w = ($(window).width()) * .9
-              h = ($(window).height()) * .9
+              w = ($(document).width()) * .9
+              h = ($(document).height()) * .9
               $("#vmap").width(w)
               $("#vmap").height(h)
           }
