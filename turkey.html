@@ -1,0 +1,95 @@
+<!doctype html>
+<meta charset="utf-8"/>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/video.css">
+    <script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+    <script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+    <script src="js/video.js"></script>
+    <script>
+      // ensure the web page (DOM) has loaded
+        jQuery(document).ready(function () {
+            var pop = Popcorn("#ourvideo");
+            // add a footnote at 2 seconds, and remove it at 6 seconds
+            pop.footnote({
+                start: 15,
+                end: 20,
+                text: "World",
+                target: "press"
+            });
+            pop.footnote({
+                start: 25,
+                end: 30,
+                text: "World Press",
+                target: "press"
+            });
+            pop.footnote({
+                start: 30,
+                end: 35,
+                text: "World Press Freedom",
+                target: "press"
+            });
+            pop.footnote({
+                start: 35,
+                end: 40,
+                text: "World Press Freedom Index",
+                target: "press"
+            });
+            pop.footnote({
+                start: 40,
+                end: 45,
+                text: "World Press Freedom Index Rank:151",
+                target: "press"
+            });
+            pop.footnote({
+                start: 45,
+                end: 62,
+                text: "World Press Freedom Index Rank: 5",
+                target: "press"
+            });
+            
+            pop.footnote({
+                start: 15,
+                end: 20,
+                text: "Average",
+                target: "bandwidth"
+            });
+            pop.footnote({
+                start: 20,
+                end: 25,
+                text: "Average National",
+                target: "bandwidth"
+            });
+            pop.footnote({
+                start: 25,
+                end: 30,
+                text: "Average National Bandwidth:",
+                target: "bandwidth"
+            });
+            pop.footnote({
+                start: 30,
+                end: 62,
+                text: "Average National Bandwidth: 6.2 Mb/s",
+                target: "bandwidth"
+            });
+         // play the video right away
+            pop.play();
+        });
+    </script>
+    
+  </head>
+  <body>
+    <div id = "vid">
+        <video height="240" width="426" id="ourvideo" controls>
+          <source src="Turkey.mp4">
+          <source src="Turkey.ogv">
+          <source src="Turkey.webm">
+        </video>
+    </div>
+    <div id="press"></div>
+    <div id="bandwidth"></div>
+    <div id="back">
+        <a href="index.html"><button id="return">Pick Another Region</button></a>
+    </div>
+  </body>
+</html>
