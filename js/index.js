@@ -124,6 +124,9 @@ jQuery(document).ready(function () {
             if(country == "Paraguay"){
                 return "paraguay.html"
             }
+            if(country == "Turkey") {
+                return "turkey.html"
+            }
             else{return "Error"}
           }
     });
