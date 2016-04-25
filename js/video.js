@@ -1,7 +1,7 @@
 // ensure the web page (DOM) has loaded
       jQuery(document).ready(function () {
-         var height = $(document).height()*.95;
-         var width = $(document).width()*.95;
+         var height = $(document).height()*.8;
+         var width = $(document).width()*.8;
          changeVideoResolution(height,width);
        
          function changeVideoResolution(height, width) {
@@ -25,9 +25,9 @@
              $("#ourvideo").height(vH);
              $("#ourvideo").width(vW);
              sidemargin = ($(document).width - vW)/2;
-             backMargin = ($(document).width - $("#back").width)/2;
-             $("#back").css({'margin-left':backMargin+'px'});
-             $("#back").css({'margin-right':backMargin+'px'});
+             //backMargin = ($(document).width - $("#return").width)/2;
+             //$("#back").css({'margin-left':backMargin+'px'});
+             //$("#back").css({'margin-right':backMargin+'px'});
              $("#ourvideo").css({'margin-left':sidemargin+'px'});
              $("#ourvideo").css({'margin-right':sidemargin+'px'});
              $("#ourvideo").css({'margin-top':'1%'});
