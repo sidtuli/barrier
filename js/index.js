@@ -104,28 +104,36 @@ jQuery(document).ready(function () {
         function findLink(country) {
             console.log(country)
             if(country == "Finland"){
-                return "finland.html"
+                console.log("Hello?");
+                window.location.href = "finland.html";
+                return;
             }
             if(country == "China"){
-                return "china.html"
+                window.location.href = "china.html";
+                return;
             }
             if(country == "New Zealand"){
-                return "newzealand.html"
+                window.location.href = "newzealand.html";
+                return;
             }
             if(country == "Japan"){
-                return "japan.html"
+                window.location.href = "japan.html";
+                return;
             }
             if(country == "United States of America"){
                 return "chattanooga.html"
             }
             if(country == "South Africa"){
-                return "southafrica.html"
+                window.location.href = "southafrica.html";
+                return;
             }
             if(country == "Paraguay"){
-                return "paraguay.html"
+                window.location.href = "paraguay.html";
+                return;
             }
             if(country == "Turkey") {
-                return "turkey.html"
+                window.location.href = "turkey.html";
+                return;
             }
             else{return "Error"}
           }
