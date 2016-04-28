@@ -1,0 +1,32 @@
+body {
+    background-color:#5577FF;            
+}
+a{
+    text-align:center;
+    margin-right:auto;
+    margin-left:auto;
+}
+button{
+    text-align:center;
+    margin-right:auto;
+    margin-left:auto;
+    width:20%;
+}
+#regionbutton {
+    text-align:center;
+    margin-right:auto;
+    margin-left:auto;
+}
+#label{
+    display:none;
+    font-size: 105%;
+}
+#navajo{
+    display:none;
+    font-size: 105%;
+}
+#vmap{
+    width: 600px;
+    height:400px;
+    margin: 0 auto;
+}
