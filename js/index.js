@@ -3,15 +3,8 @@ jQuery(document).ready(function () {
         // Then change the numbers to not fill the window and then change its dimensions
         w = ($(document).width())* .9
         h = ($(document).height())* .9
-        //console.log(w)
-        //console.log(h)
-        $("#vmap").width(w)
-        $("#vmap").height(h)
-        // Retrieving data from the json of regions from my map.
-        var regions = []
-        $.getJSON("js/data/regions.json", function(data){
-            regions = data
-        });
+        $("#vmap").width(w);
+        $("#vmap").height(h);
         var regionCode
         // Here is all the code that deals with the vector map functionality 
         jQuery('#vmap').vectorMap({
@@ -26,26 +19,18 @@ jQuery(document).ready(function () {
           scaleColors: ['#FF0000', '#FFFF00'],
           values: sampledata,
           normalizeFunction: 'polynomial',
-          // When a region is clicked, it make a button appear
+          // When hovering on a region, attempt to prevent any normal hover 
+          // actions on non-selectable regions
           onRegionOver: function(event, code, region) {
               if(isSelect(code)) {
                   document.body.style.cursor = "pointer";
               } else {
-                  //console.log(code);
                   event.preventDefault();
               }
           },
+          // When a region is clicked I naviagate users to choose a region or go immediately to a country
           onRegionClick: function(event, code, region) {
-              //console.log(selectable);
-              //console.log(code);
-              
               if(isSelect(code)){
-                  //console.log("hello"+code);
-                  /*for(i = 0; i < regions.length; i++){
-                  if(code.toUpperCase() == regions[i].Code){
-                      //console.log(code,regions[i].Country)
-                    }
-                  }*/
                 var button = region;
                 if(region === "United States of America") {
                     button = "Chattanooga";
@@ -59,11 +44,9 @@ jQuery(document).ready(function () {
                 }
                 $("#label").text(button);
                 if($("#label").is(":hidden")){
-                    console.log(region);
                     $("#label").toggle("highlight");
                 }
                 $("#country").prop("href",findLink(region));
-                console.log($("#country").attr("href"))
               } else {
                 if($("#label").is(":visible") && $("#navajo").is(":visible")) {
                   $("#label").toggle("highlight");
@@ -75,6 +58,7 @@ jQuery(document).ready(function () {
               }
               
           },
+          // When a region is deselected I hide the buttons
           onRegionDeselect: function(event, code, region) {
               if($("#label").is(":visible") && $("#navajo").is(":visible")) {
                   $("#label").toggle("highlight");
@@ -83,16 +67,15 @@ jQuery(document).ready(function () {
                   $("#label").toggle("highlight");
               } 
           },
-          // When the window is resized I again find the window width and length and proportion the map to fit well
+          // Each time the window is resized, I change the size of the map
           onResize: function(event, width, height) {
-              //console.log(width)
-              //console.log(height)
               w = ($(document).width()) * .9
               h = ($(document).height()) * .9
               $("#vmap").width(w)
               $("#vmap").height(h)
           }
         });
+        // Finds out whether or not a region should be selectable
         function isSelect(regCode) {
             for(i = 0; i < selectable.length; i++) {
                 if(regCode == selectable[i]) {
@@ -101,39 +84,38 @@ jQuery(document).ready(function () {
             }
             return false;
         }
+        // Will give back the link to a country as well as move the user to a country wth only one choice
         function findLink(country) {
-            console.log(country)
             if(country == "Finland"){
-                console.log("Hello?");
                 window.location.href = "finland.html";
-                return;
+                return "finland.html";
             }
             if(country == "China"){
                 window.location.href = "china.html";
-                return;
+                return "china.html";
             }
             if(country == "New Zealand"){
                 window.location.href = "newzealand.html";
-                return;
+                return "newzealand.html";
             }
             if(country == "Japan"){
                 window.location.href = "japan.html";
-                return;
+                return "japan.html";
             }
             if(country == "United States of America"){
                 return "chattanooga.html"
             }
             if(country == "South Africa"){
                 window.location.href = "southafrica.html";
-                return;
+                return "southafrica.html";
             }
             if(country == "Paraguay"){
                 window.location.href = "paraguay.html";
-                return;
+                return "paraguay.html";
             }
             if(country == "Turkey") {
                 window.location.href = "turkey.html";
-                return;
+                return "turkey.html";
             }
             else{return "Error"}
           }
