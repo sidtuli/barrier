@@ -1,6 +1,6 @@
 # barrier
 Capstone project.
 
-Portfolio Website : http://dcc.umd.edu/portfolio/stuli/
+<a href="http://dcc.umd.edu/portfolio/stuli/">Portfolio Website</> 
 
-Project Website : http://sidtuli.github.io/barrier/
+<a href="http://sidtuli.github.io/barrier/">Project Website</> 
