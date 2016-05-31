@@ -18,7 +18,7 @@ Made using <a href = "http://jqvmap.com/">jQuery Vector Map</a>,<a href ="http:/
             <li><del>Japan</del></li>
             <li><del>New Zealand</del></li>
             <li>Paraguay</li>
-            <li>South Africa</li>
+            <li><del>South Africa</del></li>
             <li>Turkey</li>
         </ul>
     </li>
