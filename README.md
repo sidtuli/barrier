@@ -12,8 +12,8 @@ Made using <a href = "http://jqvmap.com/">jQuery Vector Map</a>,<a href ="http:/
     <li>Re-Edit Videos
         <ul>
             <li>China</li>
-            <li>Finland</li>
-            <li>Chattanooga</li>
+            <li><del>Finland</del></li>
+            <li><del>Chattanooga</del></li>
             <li>Navajo Nation</li>
             <li>Japan</li>
             <li>New Zealand</li>
