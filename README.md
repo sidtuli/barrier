@@ -9,7 +9,7 @@ Made using <a href = "http://jqvmap.com/">jQuery Vector Map</a>,<a href ="http:/
 
 <h3>To-Do List</h3>
 <ul>
-    <li>Re-Edit Videos
+<li><del>Re-Edit Videos</del>
         <ul>
             <li><del>China</del></li>
             <li><del>Finland</del></li>
