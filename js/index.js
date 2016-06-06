@@ -114,7 +114,10 @@ jQuery(document).ready(function () {
                 return "paraguay.html";
             }
             if(country == "Turkey") {
+<<<<<<< HEAD
                 
+=======
+>>>>>>> parent of 7220e1d... Finished editing videos
                 window.location.href = "turkey.html";
                 return "turkey.html";
             }
