@@ -5,7 +5,7 @@ jQuery(document).ready(function () {
         h = ($(document).height())* .9
         $("#vmap").width(w);
         $("#vmap").height(h);
-        var regionCode
+        showAbout();
         // Here is all the code that deals with the vector map functionality 
         jQuery('#vmap').vectorMap({
           map: 'world_en',
@@ -30,6 +30,7 @@ jQuery(document).ready(function () {
           },
           // When a region is clicked I naviagate users to choose a region or go immediately to a country
           onRegionClick: function(event, code, region) {
+              console.log(localStorage.getItem("count"));
               if(isSelect(code)){
                 var button = region;
                 if(region === "United States of America") {
@@ -86,6 +87,9 @@ jQuery(document).ready(function () {
         }
         // Will give back the link to a country as well as move the user to a country wth only one choice
         function findLink(country) {
+            if(country != "United States of America") {
+                incCount();
+            }
             if(country == "Finland"){
                 window.location.href = "finland.html";
                 return "finland.html";
@@ -114,14 +118,42 @@ jQuery(document).ready(function () {
                 return "paraguay.html";
             }
             if(country == "Turkey") {
-<<<<<<< HEAD
-                
-=======
->>>>>>> parent of 7220e1d... Finished editing videos
                 window.location.href = "turkey.html";
                 return "turkey.html";
             }
             else{return "Error"}
-          }
-    
+        }
+        function supportsLocalStorage(){
+            try{
+                return 'localStorage' in window && window['localStorage'] !== null;
+            } catch(e) {
+                return false;
+            }
+        }
+        function incCount(){
+            if(supportsLocalStorage()){
+                if (localStorage.getItem("count") === null) {
+                    localStorage.setItem("count",1);
+                } else {
+                    count = parseInt(localStorage.getItem("count"));
+                    localStorage.setItem("count",count+1);
+                }
+            } else{
+                
+            }
+        }
+        $("#regionbutton").click(function(){
+           incCount(); 
+        });
+        function showAbout(){
+            if(supportsLocalStorage()){
+                if(localStorage.getItem("count") === null || parseInt(localStorage.getItem("count")) < 2) {
+                    $("#about").css("display","none");
+                } else {
+                    $("#about").css("display","inline-block");
+                }
+            } else {
+                $("#about").css("display","inline-block");
+            }
+        }
     });

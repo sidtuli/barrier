@@ -29,4 +29,12 @@ button{
     width: 600px;
     height:400px;
     margin: 0 auto;
+    display:inline-block;
+}
+#about{
+    width:5%;
+    height:5%;
+    float:right;
+    display: none;
+    margin-top: 5%;
 }
