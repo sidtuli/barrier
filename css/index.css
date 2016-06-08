@@ -38,3 +38,16 @@ button{
     display: none;
     margin-top: 5%;
 }
+#blurb{
+    background-color: rgba(255,255,255,0.8);
+    top: 10px;
+    right: 10%;
+    left: 10%;
+    font-size:16px;
+    color:black;
+    padding:0 10px;
+    position:fixed;
+    display:none;
+    z-index: 4;
+    word-wrap:break-word;
+}

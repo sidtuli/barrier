@@ -156,4 +156,12 @@ jQuery(document).ready(function () {
                 $("#about").css("display","inline-block");
             }
         }
+        $("#about").click(function() {
+            console.log($("#blurb").css("display"));
+            if($("#blurb").css("display") == "block"){
+                $("#blurb").css("display","none");
+            } else {
+                $("#blurb").css("display","block");
+            }
+        });
     });
