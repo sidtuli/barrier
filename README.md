@@ -3,6 +3,8 @@ An interactive film capstone project dealing with issues of internet access and 
 
 <a href="http://dcc.umd.edu/portfolio/stuli/">Portfolio Website</a> 
 
-<a href="http://sidtuli.github.io/barrier/">Project Website</a> 
+<a href="http://sidtuli.github.io/barrier/">Project Website</a>
+
+<a href="http://sidtuli.github.io/barrier/biblio.html">Bibliography</a>
 
 Made using <a href = "http://jqvmap.com/">jQuery Vector Map</a>,<a href ="http://popcornjs.org/">Popcorn.js</a>, and <a href="https://jquery.com/">jQuery</a>

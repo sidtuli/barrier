@@ -157,11 +157,18 @@ jQuery(document).ready(function () {
             }
         }
         $("#about").click(function() {
-            console.log($("#blurb").css("display"));
             if($("#blurb").css("display") == "block"){
                 $("#blurb").css("display","none");
             } else {
                 $("#blurb").css("display","block");
             }
         });
+        $("#about").hover(
+            function(){
+                $(".question").attr("fill","#E3DAC9");
+            },
+            function(){
+                $(".question").attr("fill","#FFFFFF");
+            }
+        );
     });
